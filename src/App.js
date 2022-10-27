@@ -1,8 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import MarvelList from "./components/MarvelList";
+import CharactersDetail from "./components/CharactersDetail";
+import ComicsDetail from "./components/ComicsDetail";
+import StoriesDetail from "./components/StoriesDetail";
+import Error from "./components/Error";
 
-import logo from "./logo.svg";
+import logo from "../src/img/logo.png";
 import "./App.css";
 
 function App() {
@@ -40,6 +44,23 @@ function App() {
             >
               Stories
             </Route>
+
+            <Route
+              exact
+              path="/characters/:id"
+              element={<CharactersDetail type={"characters"} />}
+            />
+            <Route
+              exact
+              path="/comics/:id"
+              element={<ComicsDetail type={"comics"} />}
+            />
+            <Route
+              exact
+              path="/stories/:id"
+              element={<StoriesDetail type={"stories"} />}
+            />
+            <Route path="*" element={<Error />} />
           </Routes>
         </BrowserRouter>
       </div>
