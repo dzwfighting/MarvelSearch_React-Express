@@ -1,4 +1,5 @@
 import React from "react";
+import "../style/marvelList.css";
 
 const Search = (props) => {
   console.log(props);
@@ -18,7 +19,7 @@ const Search = (props) => {
       name="formName"
       className="center"
     >
-      <label>
+      <label className="typeMargin">
         <span>Search {props.type}: </span>
         <input
           autoComplete="off"

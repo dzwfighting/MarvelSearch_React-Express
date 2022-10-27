@@ -9,6 +9,9 @@ import Error from "./Error";
 
 import "../App.css";
 import noImage from "../img/download.jpeg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../style/marvelList.css";
+
 import {
   Card,
   CardActionArea,
@@ -178,14 +181,6 @@ const MarvelList = (props) => {
     // console.log(searchTerm);
   };
 
-  // const CharacterId = (id) => {
-  //   console.log("in id introduce");
-  //   console.log(props.type);
-  //   const path = `/${props.type}/${id}`;
-  //   // jump page in id page
-  //   navigate(path);
-  // };
-
   const nextPage = () => {
     if (page + 1 === pages.totalPages) {
       setShowNext(false);
@@ -281,14 +276,25 @@ const MarvelList = (props) => {
   } else {
     return (
       <div>
-        <h2>{props.type}</h2>
+        <div className="typeMargin">
+          <h2 className="showType">{props.type}</h2>
+        </div>
+
         <div>
           {showPrevious ? (
-            <Button onClick={prevPage}>Previous</Button>
+            <Button className="btn btn-outline-warning" onClick={prevPage}>
+              Previous
+            </Button>
           ) : (
             <p></p>
           )}
-          {showNext ? <Button onClick={nextPage}>Next</Button> : <p></p>}
+          {showNext ? (
+            <Button className="btn btn-outline-secondary" onClick={nextPage}>
+              Next
+            </Button>
+          ) : (
+            <p></p>
+          )}
           <Search searchValue={searchValue} type={props.type} />
           <br />
           <br />

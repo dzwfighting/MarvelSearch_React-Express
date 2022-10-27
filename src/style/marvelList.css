@@ -1,0 +1,9 @@
+.typeMargin {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.showType {
+  font-style: italic;
+  color: #226f85;
+  font-size: 3rem;
+}

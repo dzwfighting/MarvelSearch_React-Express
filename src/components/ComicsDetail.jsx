@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import { ts, publickey, hash, baseUrl } from "../data/marvelData";
 import noImage from "../img/download.jpeg";
 import Error from "./Error";
+import "../style/marvelList.css";
 
 import {
   Card,
@@ -16,7 +17,7 @@ import {
 } from "@material-ui/core";
 const useStyles = makeStyles({
   card: {
-    maxWidth: 250,
+    maxWidth: 500,
     height: "auto",
     marginLeft: "auto",
     marginRight: "auto",
@@ -90,7 +91,10 @@ const ComicsDetail = (props) => {
     // let id = data.stories.collectionURI.split("/");
     // data.stories.id = id[id.length - 1];
     return (
-      <div>
+      <div className="typeMargin">
+        <div className="typeMargin">
+          <h2 className="showType">{props.type}</h2>
+        </div>
         <Card className={classes.card} variant="outlined">
           <CardHeader className={classes.titleHead} title={data.title} />
           <CardMedia

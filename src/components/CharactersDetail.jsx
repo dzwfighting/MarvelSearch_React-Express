@@ -6,6 +6,7 @@ import axios from "axios";
 import { ts, publickey, hash, baseUrl } from "../data/marvelData";
 import noImage from "../img/download.jpeg";
 import Error from "./Error";
+import "../style/marvelList.css";
 
 import {
   Card,
@@ -17,7 +18,7 @@ import {
 } from "@material-ui/core";
 const useStyles = makeStyles({
   card: {
-    maxWidth: 250,
+    maxWidth: 500,
     height: "auto",
     marginLeft: "auto",
     marginRight: "auto",
@@ -85,12 +86,13 @@ const CharactersDetail = (props) => {
   }
 
   const buildCard = (data) => {
+    console.log(data);
     data.comics.items.map((item) => {
       let id = item.resourceURI.split("/");
       item.id = id[id.length - 1];
     });
     return (
-      <div>
+      <div className="typeMargin">
         <Card className={classes.card} variant="outlined">
           <CardHeader className={classes.titleHead} title={data.name} />
           <CardMedia
@@ -109,7 +111,7 @@ const CharactersDetail = (props) => {
               <dl>
                 <p>
                   <dt className="title">Comics:</dt>
-                  {data.comics.items ? (
+                  {data.comics.available && data.comics.items ? (
                     <span>
                       {data.comics.items.map((comic) => {
                         return (
@@ -131,7 +133,7 @@ const CharactersDetail = (props) => {
                 </p>
                 <p>
                   <dt className="title">Stories:</dt>
-                  {data.stories.items ? (
+                  {data.stories.available && data.stories.items ? (
                     <span>
                       {data.stories.items.map((story) => {
                         return (
@@ -153,7 +155,7 @@ const CharactersDetail = (props) => {
                 </p>
                 <p>
                   <dt className="title">Events:</dt>
-                  {data.events.items ? (
+                  {data.events.available && data.events.items ? (
                     <span>
                       {data.events.items.map((event) => {
                         return (

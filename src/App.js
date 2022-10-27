@@ -7,14 +7,16 @@ import StoriesDetail from "./components/StoriesDetail";
 import Error from "./components/Error";
 
 import logo from "../src/img/logo.png";
+
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
-      <div>
-        <a className="App-link" href="/">
+      <div className="link">
+        <a className="App-link btn btn-outline-danger" href="/">
           Home
         </a>
       </div>
