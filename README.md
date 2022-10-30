@@ -22,4 +22,5 @@ Is a fullstack project based on React and Express/Redis, use React as font-end a
 
 ## notice
 
-must run both, api and client, otherwise it does not work properly
+ - must run both, api and client, otherwise it does not work properly
+ - Because the api folder and client folder is connect each other, so must install all, then run together(cannot install one, and run immediately, must both install, then run)
