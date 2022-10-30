@@ -9,4 +9,12 @@ const characterUrl = `${baseUrl}/characters?ts=${ts}&apikey=${publickey}&hash=${
 const comicsUrl = `${baseUrl}/comics?ts=${ts}&apikey=${publickey}&hash=${hash}`;
 const storiesUrl = `${baseUrl}/stories?ts=${ts}&apikey=${publickey}&hash=${hash}`;
 
-export { ts, publickey, hash, baseUrl, characterUrl, comicsUrl, storiesUrl };
+module.exports = {
+  ts,
+  publickey,
+  hash,
+  baseUrl,
+  characterUrl,
+  comicsUrl,
+  storiesUrl,
+};

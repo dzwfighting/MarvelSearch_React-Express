@@ -6,12 +6,28 @@ import ComicsDetail from "./components/ComicsDetail";
 import StoriesDetail from "./components/StoriesDetail";
 import Error from "./components/Error";
 
-import logo from "../src/img/logo.png";
+import logo from "./img/logo.png";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+const App = () => {
+  // construtor(props) {
+  //   super(props);
+  //   this.state = { apiResponse: "" };
+  // }
+  // const [state, setState] = useState("");
+  // useEffect(() => {
+  //   async function fetchDetail() {
+  //     fetch("http://localhost:4000")
+  //       .then((res) => res.text())
+  //       .then((res) => setState({ apiResponse: res }))
+  //       .catch((err) => err);
+
+  //     console.log(state.apiResponse);
+  //   }
+  //   fetchDetail();
+  // });
   return (
     <div className="App">
       <img src={logo} className="App-logo" alt="logo" />
@@ -68,6 +84,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

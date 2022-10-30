@@ -1,0 +1,25 @@
+<section>
+    <br>
+    <h2>Stories Api</h2> 
+    <br>
+  {{#each stories}}
+    <div class="card" style="width: 27rem;">
+      <div class="card-body">
+        <h4 >Story-title: {{title}}</h4>
+        <h5 class="card-text">
+            Type: {{type}}
+          {{#if description}}
+          description: {{description}}
+          {{else}}
+            description: N/A
+          {{/if}}
+          modified: {{modified}}
+        </h5>
+      </div>
+    </div>
+<br>
+  {{/each}}
+  <br>
+
+  <a href="/"><h3>Back to Home</h3> </a>
+</section>

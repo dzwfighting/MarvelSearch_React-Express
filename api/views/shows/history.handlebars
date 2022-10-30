@@ -1,0 +1,29 @@
+<section>
+    <br>
+    <h2>Characters History</h2> 
+    <br>
+
+  {{#each characters}}
+    <div class="card" style="width: 27rem;">
+      <img
+        class="card-img-top"
+        src="{{thumbnail.path}}.{{thumbnail.extension}}"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{name}}</h4>
+        <h5 class="card-text">
+          {{#if description}}
+            description: {{description}}
+          {{else}}
+            description: N/A
+          {{/if}}
+        </h5>
+      </div>
+    </div>
+<br>
+  {{/each}}
+  <br>
+
+  <a href="/api/characters/history"><h3>To characters History</h3> </a>
+</section>

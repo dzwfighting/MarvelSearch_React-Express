@@ -25,6 +25,14 @@ const Navigation = () => {
           Stories
         </Link>
       </div>
+      <div className="link_margin">
+        <Link
+          className="App-link btn btn-outline-success"
+          to="//localhost:4000"
+        >
+          API
+        </Link>
+      </div>
     </div>
   );
 };
