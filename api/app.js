@@ -45,6 +45,7 @@ app.get("/api/characters/history", async (req, res, next) => {
     let cache = (
       await client.LRANGE(`characters + ${newestPage} + ${newestOffset}`, 0, 19)
     ).map(JSON.parse);
+    console.log(`in history offset=${newestOffset},new=${newestPage}`)
     cache.forEach((x) => (x.id = parseInt(x.id)));
     // res.json(cache[0]);
     res.render("shows/history", { characters: cache[0] }, async (err, html) => {
@@ -87,7 +88,7 @@ app.get("/api/characters/page/:pagenum", async (req, res, next) => {
     // });
   }
 
-  console.log(page);
+  console.log(`in characters/page ${page}`);
   let offset = page * 20;
   newestPage = page;
   newestOffset = offset;
@@ -99,6 +100,7 @@ app.get("/api/characters/page/:pagenum", async (req, res, next) => {
     let cache = (
       await client.LRANGE(`characters + ${page} + ${offset}`, 0, 19)
     ).map(JSON.parse);
+    console.log(`in characters offset=${newestOffset},new=${newestPage}`)
     // console.log(cache[0]);
     // res.send(cache[0]);
     res.render(
